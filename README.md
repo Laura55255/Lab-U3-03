@@ -1,16 +1,31 @@
-# React + Vite
+# Testimonios con React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Práctica inicial de React – Ingeniería de Software, Unidad 3 (AGO–DIC 2026), TecNM Celaya.
 
-Currently, two official plugins are available:
+**Integrante:** [tu nombre completo]
+**Etapa terminada:** [Básica / Básica + ampliación con autoplay]
+**Versiones:** Node [v...] · npm [...]
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Instalación y ejecución
 
-## React Compiler
+    npm install
+    npm run dev
+    npm run build
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Estructura
 
-## Expanding the ESLint configuration
+- `src/data.js`: datos de los testimonios (ficticios).
+- `src/components/Testimonial.jsx`: presenta una tarjeta.
+- `src/components/Controls.jsx`: botones; comunica las acciones con callbacks.
+- `src/App.jsx`: conserva el estado (`index`) y coordina los componentes.
+- `src/styles.css`: estilos.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Decisiones principales
+
+- [Por qué App guarda el estado y los hijos solo reciben props.]
+- [Cómo funciona el botón Aleatorio y por qué no repite el actual.]
+- [Cómo se manejan los casos de cero y un registro.]
+
+## Pruebas
+
+Ver [PRUEBAS.md](PRUEBAS.md).
