@@ -16,13 +16,14 @@
 | P10 Compilación | `npm run build` sin errores; consola sin errores de aplicación | | | |
 
 ## Ampliación con Autoplay 
+## Pruebas de la ampliación (autoplay)
 
-| ID | Prueba | Resultado esperado | Resultado obtenido | Estado | Corrección |
-|:---:|---|---|---|:---:|---|
-| A01 | Activación | Reanudar inicia avances cada 5 segundos. | | | |
-| A02 | Pausa | Pausar mantiene el testimonio actual por más de 5 segundos. | | | |
-| A03 | Acción manual | Anterior, Siguiente y Aleatorio cambian la tarjeta y pausan el autoplay. | | | |
-| A04 | Reanudación | Reanudar continúa los avances sin acelerar ni duplicar intervalos. | | | |
-| A05 | Límites | El último testimonio regresa al primero automáticamente. | | | |
-| A06 | Pocos datos | Con cero o un registro no se crea ningún intervalo. | | | |
-| A07 | Limpieza | El return del efecto elimina el intervalo anterior al pausar o reanudar. | | | |
+| Prueba | Acción y resultado esperado | Resultado obtenido | Estado |
+|--------|-----------------------------|--------------------|--------|
+| A01 Activación | Reanudar inicia avances separados aproximadamente cinco segundos. | Al presionar Reanudar, el testimonio cambió cada ~5 segundos. | Aprobado |
+| A02 Pausa | Pausar mantiene el testimonio al esperar más de cinco segundos. | Con Pausar, la tarjeta se mantuvo igual por más de 5 segundos. | Aprobado |
+| A03 Acción manual | Anterior, Siguiente o Aleatorio cambian la tarjeta y dejan pausada la reproducción. | Los tres botones cambiaron la tarjeta y el botón volvió a mostrar Reanudar. | Aprobado |
+| A04 Reanudación | Reanudar permite nuevos avances; repetir varias veces sin aceleración. | Pausé y reanudé varias veces y el ritmo se mantuvo en 5 segundos. | Aprobado |
+| A05 Límites | Durante autoplay, el último vuelve al primero. | Del testimonio 8 de 8 pasó al 1 de 8. | Aprobado |
+| A06 Pocos datos | Con cero o un registro no se crea un intervalo. | Con un solo registro desapareció el botón Pausar/Reanudar y no hubo avance. | Aprobado |
+| A07 Limpieza | El return del efecto limpia el intervalo; no se acumulan al alternar pausa y reproducción. | El useEffect incluye `clearInterval(intervalo)` y no se aceleró al alternar. | Aprobado |
